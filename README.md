@@ -10,9 +10,6 @@ Project OpenWise
 
 <!-- The button used to copy the text -->
 <button onclick="myFunction()">Copy text</button>
-<!DOCTYPE html>
-<html>
-<body>
 
 <p>Click on the button to copy the text from the text field. Try to paste the text (e.g. ctrl+v) afterwards in a different window, to see the effect.</p>
 
