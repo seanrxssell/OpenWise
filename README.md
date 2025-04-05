@@ -10,17 +10,31 @@ Project OpenWise
 
 <!-- The button used to copy the text -->
 <button onclick="myFunction()">Copy text</button>
-function myFunction() {
-  // Get the text field
-  var copyText = document.getElementById("myInput");
 
-  // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
+<div class="code-container">
+  <pre id="codeBlock1"><code>function example() { 
+  console.log("Hello world");
+}</code></pre>
+  <button class="copy-button" data-target="codeBlock1">Copy</button>
+</div>
 
-   // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
-
-  // Alert the copied text
-  alert("Copied the text: " + copyText.value);
-}
+<script>
+document.querySelectorAll('.copy-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-target');
+    const textToCopy = document.getElementById(targetId).textContent;
+    
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        // Visual feedback
+        button.textContent = 'Copied!';
+        setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 2000);
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+  });
+});
+</script>
