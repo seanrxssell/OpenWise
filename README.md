@@ -5,11 +5,6 @@ Project OpenWise
 <p>Blah blah blah</p>
 <p>Blah blah blah</p>
 <p>See Daniel?</p>
-<!-- The text field -->
-<input type="text" value="Hello Child" id="myInput">
-
-<!-- The button used to copy the text -->
-<button onclick="myFunction()">Copy text</button>
 
 <div class="code-container">
   <pre id="codeBlock1"><code>function example() { 
